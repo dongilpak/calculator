@@ -1,17 +1,20 @@
 import React from 'react';
 
-const BtnPanel = () => {
+const BtnPanel = ({ onClickBtn }) => {
+    const handleClick = e => {
+        const value = e.target.textContent;
+        console.log(value);
+        onClickBtn(value);
+    };
+
     return (
-        <div className='btnPanel'>
+        <div className='btnPanel' onClick={handleClick}>
             <div className='row'>
                 <div className='btn'>
                     <button>AC</button>
                 </div>
                 <div className='btn'>
                     <button>+/-</button>
-                </div>
-                <div className='btn'>
-                    <button>%</button>
                 </div>
                 <div className='btn orange'>
                     <button>÷</button>
